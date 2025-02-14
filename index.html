@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Love Story</h1>
+        <div class="audio-container">
+            <audio class="player" controls preload="none">
+                <source src="https://docs.google.com/uc?export=open&id=1PzoILkiH3e1XOhehoj8BFqvfBk9Jo-32" type="audio/mp3">                
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div class="lyrics">
+            <h2>Lyrics</h2>
+            <p>
+                In the heart of a city where the winters were warm,<br>
+                We met in the alleys of a love that can't be torn.<br>
+                Under the golden hue of the setting sun,<br>
+                Our hearts beat as one, the way it had just begun.<br><br>
+
+                I remember the first time our lips met,<br>
+                In a world that seemed to pause and forget.<br>
+                We went on outings, hand in hand, side by side,<br>
+                Every moment with you was where I truly belonged.<br><br>
+
+                My love for you, it never fades,<br>
+                Across the miles, it only grows, unafraid.<br>
+                I'll stand by your side, forevermore,<br>
+                In my heart, you’ll always be my shore.<br><br>
+
+                You cared for me in ways no one else could,<br>
+                In your eyes, I found the strength I needed, oh so good.<br>
+                Two years ago, I boarded a plane,<br>
+                To a land of snow, where the cold reigns.<br><br>
+
+                But even thousands of miles apart,<br>
+                Our love remains, a burning heart.<br>
+                Every night, I dream of your embrace,<br>
+                A love so deep, it’s engraved on my face.<br><br>
+
+                My love for you, it never fades,<br>
+                Across the miles, it only grows, unafraid.<br>
+                I'll stand by your side, forevermore,<br>
+                In my heart, you’ll always be my shore.<br><br>
+
+                Distance hurts, it aches so true,<br>
+                But it’s in the silence where our love grew.<br>
+                Through every trial, through every test,<br>
+                Our bond, unbroken, stands the best.<br><br>
+
+                I’ll fight for us, I won’t let go,<br>
+                For a future where our hearts will flow.<br>
+                Together we’ll face the storms of time,<br>
+                With a love that’s pure, and divine.<br><br>
+
+                My love for you, it never fades,<br>
+                Across the miles, it only grows, unafraid.<br>
+                I'll stand by your side, forevermore,<br>
+                In my heart, you’ll always be my shore.<br><br>
+
+                When the winter was warm and filled with love,<br>
+                We promised each other, from above.<br>
+                That no matter how far, no matter the pain,<br>
+                We’d find our way back, again and again.<br><br>
+
+                I close my eyes, and I see you there,<br>
+                In the sunlight, in the gentle air.<br>
+                Our love is a flame, a guiding light,<br>
+                Leading me to you, every single night.<br><br>
+
+                So hold on tight, my dearest one,<br>
+                Our journey’s long, but we’ve just begun.<br>
+                In a world that’s vast, and sometimes cold,<br>
+                Our love will keep us, forever golden.<br>
+            </p>
+        </div>
+
+        <div class="gif-container">
+            <img src="https://media.tenor.com/6bRnD34hkkIAAAAC/love-bears.gif" alt="Love Bear 1">
+            <img src="https://media.tenor.com/dX6JSKjJm-8AAAAC/cute-bear-hug.gif" alt="Love Bear 2">
+            <img src="https://media.tenor.com/UJAPQlbF0rIAAAAC/teddy-love.gif" alt="Love Bear 3">
+            <img src="https://media.tenor.com/zxZQ_kBaW2UAAAAC/teddy-hug-bear.gif" alt="Love Bear 4">
+        </div>
+
+    </div>
+    <!-- Floating hearts containers -->
+    <div class="floating-hearts-left"></div>
+    <div class="floating-hearts-right"></div>
+    <script>
+        function createHeart(side) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+
+            if (side === 'left') {
+                heart.style.left = Math.random() * 50 + "%"; // Hearts on the left side
+            } else {
+                heart.style.right = Math.random() * 50 + "%"; // Hearts on the right side
+            }
+
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            document.querySelector(`.floating-hearts-${side}`).appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Create hearts for the left side
+        setInterval(() => createHeart('left'), 300);
+
+        // Create hearts for the right side
+        setInterval(() => createHeart('right'), 300);
+    </script>
+</body>
+</html>

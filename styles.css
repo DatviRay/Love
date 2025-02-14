@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.container {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.audio-container {
+    margin-bottom: 20px;
+}
+
+.lyrics {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.gif-container img {
+    max-width: 150px;
+    border-radius: 10px;
+}
+/* Floating hearts containers */
+.floating-hearts-left,
+.floating-hearts-right {
+    position:absolute;
+    top: 0;
+    width: 60%; /* Each container takes half the width */
+    height:100%;
+    pointer-events: none; /* Ensure hearts don't interfere with clicks */
+    overflow:hidden;
+}
+
+.floating-hearts-left {
+    left: 0;
+}
+
+.floating-hearts-right {
+    right: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    transform: rotate(-45deg);
+    animation: float 6s infinite;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(-10vh) rotate(-45deg);
+    }
+}
